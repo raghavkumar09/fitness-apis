@@ -1,15 +1,16 @@
 import { Request, Response } from 'express';
-import { mockFitnessPlans } from '../models/mockData';
+getFitnessPlansFromDB
+import { getFitnessPlansFromDB } from '../models/fitnessPlanModel';
 
 // Function Name: getFitnessPlans
-export const getFitnessPlans = (req: Request, res: Response): void => {
-    try {
-        // Simulate database query by returning mock data
-        const fitnessPlans = mockFitnessPlans;
+export const getFitnessPlans = async (req: Request, res: Response): Promise<void> => {
+  try {
 
-        res.status(200).json(fitnessPlans);
-    } catch (error) {
-        console.error('Error fetching fitness plans:', error);
-        res.status(500).json({ message: 'Failed to retrieve fitness plans.' });
-    }
+    const fitnessPlans = await getFitnessPlansFromDB();
+
+    res.status(200).json(fitnessPlans);
+  } catch (error) {
+    console.error('Error fetching fitness plans:', error);
+    res.status(500).json({ message: error instanceof Error ? error.message : 'Failed to retrieve fitness plans.' });
+  }
 };
