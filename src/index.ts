@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
+import fitnessPlanRoutes from './routes/fitnessPlanRoutes';
 import userRoutes from './routes/userRoutes';
 
 dotenv.config();
@@ -13,6 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
+app.use('/api/fitness-plans', fitnessPlanRoutes);
 app.use('/api/user', userRoutes);
 
 // Basic root route

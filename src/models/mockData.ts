@@ -1,4 +1,12 @@
-import { User } from '../types';
+import { FitnessPlan, User } from '../types';
+
+// Simulate a database table for fitness plans
+export const mockFitnessPlans: FitnessPlan[] = [
+    { id: 1, title: 'Morning Cardio Blast', description: '30 minutes of high-intensity cardio.', type: 'cardio' },
+    { id: 2, title: 'Full Body Strength', description: 'Compound exercises targeting all major muscle groups.', type: 'strength' },
+    { id: 3, title: 'Yoga for Flexibility', description: 'Gentle yoga poses to improve flexibility.', type: 'flexibility' },
+    { id: 4, title: 'HIIT Quickie', description: 'Short, intense interval training.', type: 'cardio' },
+];
 
 // Mock data for User 
 export const mockUsers: User[] = [
