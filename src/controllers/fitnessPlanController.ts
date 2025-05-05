@@ -1,5 +1,4 @@
 import { Request, Response } from 'express';
-getFitnessPlansFromDB
 import { getFitnessPlansFromDB } from '../models/fitnessPlanModel';
 
 // Function Name: getFitnessPlans
